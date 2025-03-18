@@ -1,0 +1,33 @@
+<div class=" border border-b-2 rounded-lg">
+  <!-- Encabezado del dropdown -->
+  <div
+    class="flex items-center justify-between cursor-pointer bg-sky-400 p-4"
+    (click)="toggleContent()"
+    role="button"
+    [attr.aria-expanded]="isOpen"
+  >
+    <!-- Título del dropdown -->
+    <span class="text-black font-semibold">{{ title }}</span>
+
+    <!-- Ícono de flecha (cambia según el estado) -->
+    <span [class.rotate-180]="isOpen">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 transition-transform duration-200"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </div>
+
+  @if(isOpen){
+ <!-- Contenido del dropdown (se muestra/oculta según el estado) -->
+ <div class="mt-4 p-4">
+  <ng-content></ng-content> <!-- Contenido dinámico -->
+</div>
+  }
+
+</div>

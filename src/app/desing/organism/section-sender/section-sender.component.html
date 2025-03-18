@@ -1,0 +1,30 @@
+<span class="text-gray-700 font-medium">Probando formulario maquetación</span>
+<form (ngSubmit)="onSubmit()" class="space-y-6">
+  <div class="flex gap-5">
+    <!-- Tipo documento -->
+    <app-select
+      label="Tipo de documento"
+      [options]="documentTypes"
+      [(value)]="formData.documentType"
+      [required]="true"
+      [showError]="!formData.documentType && submitted"
+      errorMessage="Este campo es requerido."
+    ></app-select>
+    <!-- Número documento -->
+    <app-input
+      label="Número de documento"
+      placeholder="Ingrese su número de documento"
+      [(value)]="formData.documentNumber"
+      [required]="true"
+      [showError]="!formData.documentNumber && submitted"
+      errorMessage="Este campo es requerido."
+    ></app-input>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+  >
+    Enviar
+  </button>
+</form>
