@@ -5,7 +5,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   selector: 'app-button',
   standalone:true,
   templateUrl: './button.component.html',
-  imports:{NgClass},
   styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
