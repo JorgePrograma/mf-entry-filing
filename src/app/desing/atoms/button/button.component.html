@@ -1,3 +1,12 @@
-<button class="p-10 rounded-md text-white bg-red-600">
+<button
+  [ngClass]="buttonClasses"
+  (click)="onClick.emit($event)"
+>
+  <!-- Ícono (si se proporciona) -->
+  @if (icon) {
+    <span class="icon-container" [innerHTML]="icon"></span>
+  }
 
+  <!-- Texto del botón -->
+  {{ label }}
 </button>

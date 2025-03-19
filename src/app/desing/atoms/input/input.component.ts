@@ -6,7 +6,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.css'],
 })
 export class InputComponent {
-  @Input() label: string = ''; // Etiqueta del input
   @Input() placeholder: string = ''; // Placeholder del input
   @Input() type: string = 'text'; // Tipo de input (text, number, email, etc.)
   @Input() required: boolean = false; // Si el campo es requerido
